@@ -5,7 +5,7 @@
 
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="description" content="">
+	<meta name="description" content="Организация свадебных торжеств">
 	<meta name="author" content="">
 
 	<!-- <meta property="og:image" content="path/to/image.jpg"> -->
@@ -18,7 +18,7 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="#000">
 	<link rel="icon" type="image/ico" href="img/favicon/favicon.ico">
 
-	<title>Title</title>
+	<title>Family group</title>
 
 	<link rel="stylesheet" href="css/styles.css">
 
@@ -26,7 +26,7 @@
 
 <body>
 
-	<header class="header">
+	<header class="header" id="header">
 		<div class="container">
 			<div class="header-top-line">
 				<div class="row justify-content-between align-items-center">
@@ -54,7 +54,7 @@
 						<div class="page-subtitle">Ваш день. С любовью...</div>
 					</div>
 					<div class="col-12">
-						<div class="header-link-wrap"><a href="#" class="link header-link">Выбрать ведущего</a></div>
+						<div class="header-link-wrap"><a href="#js-catalog-scroll" class="link header-link">Выбрать ведущего</a></div>
 					</div>
 				</div>
 			</div>
@@ -64,7 +64,7 @@
 
 
 
-	<section class="catalog">
+	<section class="catalog" id="js-catalog-scroll">
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
@@ -161,7 +161,7 @@
 
 
 
-	<section class="media">
+	<section class="media" id="js-media-scroll">
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
@@ -341,7 +341,7 @@
 
 
 
-	<section class="feedbacks">
+	<section class="feedbacks" id="js-feedbacks-scroll">
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
@@ -468,39 +468,38 @@
 					</div>
 				</div>
 				<div class="col-md-3">
-					<nav class="footer-nav">
-						<ul>
-							<li>Наши услуги</li>
-							<li>Каталог ведущих</li>
-							<li>Портфолио</li>
-							<li>Отзывы</li>
+					<nav">
+						<ul class="footer-nav-list">
+							<li><a href="#header"><i class="icon-leaf"></i>Наши услуги</a></li>
+							<li><a href="#js-catalog-scroll"><i class="icon-leaf"></i>Каталог ведущих</a></li>
+							<li><a href="#js-media-scroll""><i class="icon-leaf"></i>Портфолио</a></li>
+							<li><a href="#js-feedbacks-scroll"><i class="icon-leaf"></i>Отзывы</a></li>
 						</ul>
 					</nav>
 				</div>
 				<div class="col-md-3">
 					<div class="footer-contacts">
-						<ul>
-							<li>
-								<a href="https://vk.com/knpfamily"><i></i>vk.com/knpfamily</a>
-							</li>
-							<li></li>
-							<li></li>
-							<li></li>
-							<li></li>
+						<div class="footer-tel-wrap">
+							Тел.: <a class="footer-tel" href="tel:89207576459">8 (920) 757-64-59</a>
+						</div>
+						<ul class="social-links footer-social-links">
+							<li><a href="https://vk.com/knpfamily" target="_blanc"><i class="icon-vkontakte"></i></a></li>
+							<li><a href="#"><i class="icon-instagram"></i></a></li>
+							<li><a href="#"><i class="icon-facebook"></i></a></li>
 						</ul>
 					</div>
 				</div>
 				<div class="col-md-3">
 					<div class="footer-copy">
-						<div></div>
-						<div></div>
-						<div></div>
+						<div class="footer-copy-block">&copy; 2012 - 2018</div>
+						<div class="footer-copy-block">Все права защищены. </div>
+						<div class="footer-copy-block">Копирование материалов запрещено. ​Сайт разработан бла-бла</div>
 					</div>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-12 d-flex justify-content-center">
-					<div class="withLove"></div>
+				<div class="col-12">
+					<div class="footer-withLove">Ваш день. С любовью...</div>
 				</div>
 			</div>
 		</div>
@@ -508,14 +507,11 @@
 
 
 
-	<div style="height: 300px; background-color: #ddd"></div>
-
 
 	<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script>window.jQuery || document.write('<script src="js/jquery-3.3.1.min.js"><\/script>')</script>
 
 
-	<script src="libs/masonry.pkgd.min.js"></script>
 	<script src="js/scripts.js"></script>
 
 </body>

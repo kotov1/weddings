@@ -67,4 +67,19 @@ $(function() {
 		arrows: true,
 	});
 
+	$(document).ready(function(){
+		$(".footer-nav-list").on("click","a", function (event) {
+			event.preventDefault();
+			var id  = $(this).attr('href'),
+				top = $(id).offset().top;
+			$('body,html').animate({scrollTop: top}, 1000);
+		});
+		$(".header-link").on("click", function (event) {
+			event.preventDefault();
+			var id  = $(this).attr('href'),
+				top = $(id).offset().top;
+			$('body,html').animate({scrollTop: top}, 1000);
+		});
+	});
+
 });

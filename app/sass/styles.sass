@@ -651,9 +651,98 @@ figure
 
 
 .footer
+	min-height: 200px
+	padding: 50px 0 25px
+	color: #9f736b
 	background-color: #2e2725
 
+	&-nav-list
+		margin: 0
+		padding-left: 0
+		list-style-type: none
+		li
+			margin-bottom: 10px
+			position: relative
+			transition: all .2s linear
+			a
+				display: block
+				color: inherit
+			i
+				position: absolute
+				top: 0
+				left: 0
+				opacity: 0
+				transition: all .1s linear
+				
+			&:hover
+				color: #fcd5c5
+				padding-left: 25px
+				transition: all .2s linear
+				i
+					height: auto
+					opacity: 1
+					transition: all .2s linear .1s
 
+	&-contacts, &-copy
+		position: relative
+		&::before
+			content: ''
+			display: block
+			width: 1px
+			height: 45px
+			position: absolute
+			left: -35px
+			top: 3px
+			background-image: linear-gradient(#9f736b, #9f736b 12px, transparent 12px, transparent 18px, #9f736b 18px, #9f736b 45px)
+
+	&-tel-wrap
+		margin-bottom: 20px
+	&-tel
+		cursor: default
+		color: inherit
+		transition: all .2s linear
+		&:hover
+			text-decoration: underline
+			color: #fcd5c5
+			transition: all .2s linear
+
+			
+
+	&-social-links
+		justify-content: flex-start
+		a
+			display: block
+			height: 30px
+			width: 30px
+			display: flex
+			justify-content: center
+			align-items: center
+			background-color: #9f736b
+			border-radius: 50%
+			margin-left: 13px
+			color: #2e2725
+			&:hover
+				i
+					color: #fff
+					transition: all .1s linear
+		i
+			transition: all .1s linear
+			&::before
+				margin: 0
+				line-height: 1.2
+
+
+	&-copy
+		&-block
+			margin-bottom: 20px
+
+
+	&-withLove
+		margin-top: 20px
+		padding-top: 20px
+		font: 28px "Gogol", sans-serif
+		text-align: center
+		border-top: 1px solid #9f736b
 
 
 
