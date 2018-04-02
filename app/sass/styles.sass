@@ -28,15 +28,9 @@
 	color: #fcd5c5
 	opacity: 1
 
-// body input:focus:required:invalid,
-// body textarea:focus:required:invalid
-// 	color: #666
-// body input:required:valid,
-// body textarea:required:valid
-// 	color: #666
 
 html, body
-	height: 100%
+	overflow-x: hidden
 
 body
 	max-width: 1920px
@@ -44,7 +38,7 @@ body
 	margin: 0 auto
 	position: relative
 	font: 16px/1.2 $default-font-family
-	overflow-x: hidden
+
 
 .img-responsive
 	display: block
@@ -59,10 +53,15 @@ body
 
 a
 	text-decoration: none
-	
+// =====================================================	
+
+
+
+
+
 // =========================================================='
 .page-heading
-	min-height: 730px
+	min-height: 100vh
 	height: 1px //ie fix
 .page-title
 	max-width: 60%
@@ -108,15 +107,57 @@ figure
 .slick-slide, .slick-active
 	outline: none
 
+.nowrap
+	white-space: nowrap
+
+.breadcrumbs
+	padding: 30px 0
+	list-style: none
+	border-radius: 4px
+	font-size: 1em
+	>
+		span
+			display: inline-block
+			+ span:before
+				padding: 0 1px
+				content: "/"
+				color: #2d2220
+			a
+				color: #2d2220
+				&:hover
+					color: 
+			&:not(:last-child)
+				text-decoration: underline
+			&:last-child
+				a
+					color: #000
+					text-decoration: none
+					cursor: default
+					&:hover
+						color: #000
+			&:hover
+				text-decoration: none
 
 
-// =========================
+.header-logo, .footer-logo
+	max-width: 125px
+// =====================================================
+
+
+
+// =====================================================
+.main-page-header
+	background-image: url('../img/top-bg.jpg')
+	box-shadow: 0 4px 5px rgba(#bbb5af, .9)
+	min-height: 100vh
+
 .header
 	position: relative
-	background: url('../img/top-bg.jpg') no-repeat 50% 0
+	background-repeat: no-repeat
+	background-position: 50% 0
 	background-size: cover
 	color: #fff
-	box-shadow: 0 4px 5px rgba(#bbb5af, .9)
+	
 	&-top-line
 		position: absolute
 		top: 3vw
@@ -126,6 +167,8 @@ figure
 		max-width: 1110px
 		font-family: "ForumRegular", sans-serif
 		color: #fff
+		a
+			color: #fff
 	&-phone-wrap
 		text-align: right
 	&-phone
@@ -135,8 +178,6 @@ figure
 		&:hover
 			text-decoration: underline
 			cursor: default
-	&-logo
-		max-width: 125px
 
 	&-link-wrap
 		text-align: center
@@ -163,12 +204,29 @@ figure
 // ====================================================
 .catalog
 	padding-bottom: 90px
+
+	&-row
+		display: flex
+		flex-wrap: wrap
+		margin-left: -10px
+		margin-right: -10px
+
+	&-col
+		padding: 0 10px
+		flex: 0 0 20%
+		max-width: 20%
+		min-height: 1px
+		position: relative
+		
 	&-item
 		color: #2d2220
 		&-name
 			margin-top: 20px
 			margin-bottom: 15px
 			font-weight: bold
+
+	&-img
+		height: 315px
 
 	&-img-wrap
 		text-align: center
@@ -204,13 +262,29 @@ figure
 			transition: opacity .3s
 		&-inline
 			width: 100%
+			padding: 0 5px
 			position: absolute
 			left: 0
 			bottom: 0
 			transform: translateY(100%)
 			transition: all .3s
+
+	&-item-text-hidden
+		display: none
+		
 	&-link
 		text-transform: uppercase
+		&-hidden
+			display: none
+			min-width: auto
+			margin-top: 15px
+			padding: 5px 20px
+			border: 2px solid #2d2220
+			transition: all .2s linear
+			&:hover
+				background-color: #fcd5c5
+				transition: all .2s linear
+
 		
 	&-role
 		margin: 5px 0
@@ -222,9 +296,18 @@ figure
 		i
 			&:hover
 				color: #9f736b
-// =================================================================
+// ====================================================
 
 
+
+
+
+
+
+
+
+
+// =====================================================
 .embed-container
 	position: relative
 	padding-bottom: 56.25%
@@ -284,13 +367,8 @@ figure
 
 
 
-
-
-.media
+.main-page-media
 	position: relative
-	padding-bottom: 90px
-	background-color: #2e2725
-	z-index: 1
 	&::before, &::after
 		content: ''
 		width: 22%
@@ -312,13 +390,22 @@ figure
 		background-color: #fcd5c5
 		background-image: linear-gradient(to top, #fcd5c5 55%, #80534a 45%)
 
-	&-heading
-		color: #fff
+.main-page-media-heading, .host-page-media-heading
+	color: #fff
+
+.media
+	padding-bottom: 90px
+	background-color: #2e2725
+	z-index: 1
+
 	&-photos
 		margin-top: 20px
+
+.grid
+	left: 1px
 .grid-item
-	width: 356px
-	margin-bottom: 20px
+	width: 359px
+	margin-bottom: 18px
 	float: left
 	overflow: hidden
 	position: relative
@@ -364,9 +451,9 @@ figure
 
 
 .grid-item--width2
-	width: 230px
+	width: 233px
 .grid-item--height2 
-	height: 453px
+	height: 447px
 .grid-item--height3
 	height: 237px
 .grid-item--height4 
@@ -388,6 +475,23 @@ figure
 	height: 1px
 	background-image: linear-gradient(90deg, #3b2e2b 0, #3b2e2b 10px, transparent 10px, transparent 14px, #3b2e2b 14px, #3b2e2b 37px, transparent 37px, transparent 50px, #3b2e2b 50px, #3b2e2b 90px, transparent 90px, transparent 92px, #3b2e2b 92px, #3b2e2b 122px, transparent 122px, transparent 130px, #3b2e2b 130px, #3b2e2b 150px)
 
+// ===================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// =====================================================
 .advantages
 	&-item
 		padding: 5vw 0
@@ -423,14 +527,23 @@ figure
 	&-img-wrap
 		display: flex
 		justify-content: center
+		align-items: center
 		position: relative
 		right: 17%
 	&-img
-		z-index: 0
+		z-index: 1
 
 	&-item2
 		.advantages-img-wrap
 			left: 17%
+
+.advantages-text-hidden
+	display: none
+	margin-top: 20px
+	.advantages-text
+		margin-top: 5px
+	
+
 
 		
 .positionResetRight
@@ -446,18 +559,18 @@ figure
 
 
 
-// ==============================/
+// =====================================================
 .feedbacks
 	padding-bottom: 90px
 
 	&-slider-inner
 		background-color: #fff
-		max-width: 465px
+		width: 465px
 		z-index: 1
 		margin-right: -20px
 		border: 25px solid #fff
-		border-right: none
-		border-left: none
+		border-right-width: 0
+		border-left-width: 0
 
 	&-slide
 		display: flex!important
@@ -477,7 +590,7 @@ figure
 		&-content
 			max-width: 450px
 			min-height: 405px
-			height: 1px
+			// height: 1px
 			display: flex
 			flex-direction: column
 			justify-content: center
@@ -504,6 +617,8 @@ figure
 	outline: none
 	cursor: pointer
 	z-index: 1
+	&:active
+		top: 51%
 
 
 .slick-prev
@@ -516,18 +631,30 @@ figure
 
 
 
-.form-section
+
+
+
+
+
+
+
+
+// =====================================================
+.main-page-form-section
 	background-color: #9f736b
-	color: #fff
 	padding-bottom: 90px
+	color: #fff
+	.contact-us
+		margin-bottom: 25px
+		&-tel
+			color: #fcd5c5
+.form-section
 	&-heading
 		margin-bottom: .5em
 		color: #fff
 
 	.contact-us
-		margin-bottom: 25px
 		&-tel
-			color: #fcd5c5
 			cursor: default
 			&:hover
 				text-decoration: underline
@@ -547,7 +674,16 @@ figure
 				&:hover
 					color: #2e2725
 		
-
+.main-page-form-section
+	.form-name, .form-tel
+		color: #fcd5c5
+		border-bottom: 1px solid #fff
+		+ span
+			color: #fcd5c5
+			left: 50%
+			transform: translateX(-50%)
+	.form-name
+		margin-bottom: 15px
 .form-wrap
 	max-width: 415px
 	margin: 0 auto
@@ -558,24 +694,45 @@ figure
 	width: 100%
 	margin-top: 10px
 	padding: 10px
-	font-size: 16px
+	font-size: 14px
 	background-color: transparent
 	border: none
 	outline: none
-	border-bottom: 1px solid #fff
 	text-align: center
 	color: #fcd5c5
+	transition: all 0.2s ease-in-out
+	&::placeholder
+		color: #fcd5c5
+		transition: all 0.2s ease-in-out
+	&:focus, &.populated
+		&::placeholder
+			color: transparent!important
+		& + span
+			opacity: 1
+			top: 0
+	+ span
+		font-size: 14px
+		position: absolute
+		top: 0px
+		opacity: 0
+		transition: all 0.2s ease-in-out
+.form-name
+	margin-bottom: 15px
+
+
+
 .form-btn
 	display: inline-block
 	margin-top: 25px
 	background-color: transparent
 	cursor: pointer
+	border-width: 1px
 	
 
 
 
 .cd-checkbox 
-	margin-top: 25px
+	margin-top: 20px
 	display: flex
 	justify-content: center
 	cursor: pointer
@@ -631,6 +788,9 @@ figure
 		a 
 			color: inherit
 			text-decoration: underline
+			&:hover
+				text-decoration: none
+				
 
 .cd-checkbox 
 	input[type=checkbox]
@@ -641,15 +801,10 @@ figure
 						stroke-dashoffset: 38px
 
 
-.cd-checkbox
-	&:hover 
-		.cd-checkbox__text 
-			color: #199b40
-
 // ==========================================================
 
 
-
+// =====================================================
 .footer
 	min-height: 200px
 	padding: 50px 0 25px
@@ -743,9 +898,115 @@ figure
 		font: 28px "Gogol", sans-serif
 		text-align: center
 		border-top: 1px solid #9f736b
+// ======================================================
+
+@import "host"
+@import "services"
+
+// ======================================================
 
 
+.cd-popup
+	position: fixed
+	left: 0
+	top: 0
+	height: 100%
+	width: 100%
+	overflow-y: scroll
+	padding-bottom: 250px
+	background-color: rgba(#fcd5c5, .5)
+	opacity: 0
+	visibility: hidden
+	display: none
+	z-index: 100
+	
+	transition: opacity 0.3s 0s, visibility 0s 0.3s
+	&.is-visible
+		opacity: 1
+		visibility: visible
+		display: block
+		
+		transition: opacity 0.3s 0s, visibility 0s 0s
+
+.cd-popup-container
+	position: fixed
+	top: 50%
+	left: 50%
+	max-width: 500px
+	width: 100%
+	margin: 0 auto
+	padding: 50px
+	background: #fff
+	border-radius: .25em .25em .4em .4em
+	text-align: center
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.2)
+	transform: translate(-50%,-50%)
+	-webkit-backface-visibility: hidden
+	-webkit-transition-property: -webkit-transform
+	transition-property: transform
+	transition-duration: 0.3s
+
+.cd-popup-container .cd-popup-close
+	position: absolute
+	top: 8px
+	right: 8px
+	width: 30px
+	height: 30px
+	&::before, &::after
+		content: ''
+		position: absolute
+		top: 12px
+		width: 14px
+		height: 3px
+		background-color: black
+	&::before
+		transform: rotate(45deg)
+		left: 8px
+	&::after
+		transform: rotate(-45deg)
+		right: 8px
+
+.is-visible .cd-popup-container
+	// transform: translateY(0)
+
+.img-replace
+	display: inline-block
+	overflow: hidden
+	text-indent: 100%
+	color: transparent
+	white-space: nowrap
+
+.modal-form-heading
+	font-size: 45px
+	color: #9f736b
+
+.modal-form
+	margin-top: 20px
+	input:not([type="submit"])
+		color: #21252b
+		border-bottom: 1px solid #21252b
+		text-align: left
+		padding-left: 0
+		&::placeholder
+			color: #21252b
+		&:focus, &.populated
+			& + span
+				opacity: 1
+				top: 0
+		+ span
+			color: #21252b
+			left: 15px
 
 
+	.cd-checkbox
+		margin-top: 30px
 
-@import "media" // Всегда в конце
+
+	.form-btn
+		border: 1px solid #21252b
+		&:hover
+			color: #fff
+			border-color: #80534a
+			transition: all .1s linear
+
+@import "media"

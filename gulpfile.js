@@ -38,12 +38,11 @@ gulp.task('js', function() {
 
 gulp.task('browser-sync', function() {
 	browserSync({
+		// proxy: "domain/index.php", // local server
 		server: {
 			baseDir: 'app'
 		},
-		notify: false,
-		// tunnel: true,
-		// tunnel: "projectmane", //Demonstration page: http://projectmane.localtunnel.me
+		notify: false
 	});
 });
 
@@ -61,6 +60,7 @@ gulp.task('watch', ['sass', 'js', 'browser-sync'], function() {
 	gulp.watch('app/sass/**/*.sass', ['sass']);
 	gulp.watch(['libs/**/*.js', 'app/js/common.js'], ['js']);
 	gulp.watch('app/*.html', browserSync.reload);
+	gulp.watch('app/*.php', browserSync.reload);
 });
 
 gulp.task('imagemin', function() {
@@ -69,20 +69,19 @@ gulp.task('imagemin', function() {
 	.pipe(gulp.dest('dist/img')); 
 });
 
-gulp.task('build', ['removedist', 'imagemin', 'sass', 'js'], function() {
+gulp.task('build', ['imagemin', 'sass', 'js'], function() {
 
 	var buildFiles = gulp.src([
 		'app/*.html',
-		'app/*.php',
 		'app/.htaccess',
 		]).pipe(gulp.dest('dist'));
 
 	var buildCss = gulp.src([
-		'app/css/styles.min.css',
+		'app/css/styles.css',
 		]).pipe(gulp.dest('dist/css'));
 
 	var buildJs = gulp.src([
-		'app/js/scripts.min.js',
+		'app/js/scripts.js',
 		]).pipe(gulp.dest('dist/js'));
 
 	var buildFonts = gulp.src([
@@ -90,41 +89,3 @@ gulp.task('build', ['removedist', 'imagemin', 'sass', 'js'], function() {
 		]).pipe(gulp.dest('dist/fonts'));
 
 });
-
-// gulp.task('deploy', function() {
-
-// 	var conn = ftp.create({
-// 		host:      'hostname.com',
-// 		user:      'username',
-// 		password:  'userpassword',
-// 		parallel:  10,
-// 		log: gutil.log
-// 	});
-
-// 	var globs = [
-// 	'dist/**',
-// 	'dist/.htaccess',
-// 	];
-// 	return gulp.src(globs, {buffer: false})
-// 	.pipe(conn.dest('/path/to/folder/on/server'));
-
-// });
-
-// gulp.task('rsync', function() {
-// 	return gulp.src('dist/**')
-// 	.pipe(rsync({
-// 		root: 'dist/',
-// 		hostname: 'username@yousite.com',
-// 		destination: 'yousite/public_html/',
-// 		// include: ['*.htaccess'], // Скрытые файлы, которые необходимо включить в деплой
-// 		recursive: true,
-// 		archive: true,
-// 		silent: false,
-// 		compress: true
-// 	}));
-// });
-
-gulp.task('removedist', function() { return del.sync('dist'); });
-gulp.task('clearcache', function () { return cache.clearAll(); });
-
-gulp.task('default', ['watch']);
