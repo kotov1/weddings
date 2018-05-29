@@ -1,0 +1,188 @@
+@import "vars"
+
+.host-page-header
+	box-shadow: none
+	.page-heading
+		padding-bottom: 50px
+	.header-top-line
+		top: 1vw
+	.page-title
+		margin-bottom: 30px
+	.services-text, .header-phone-wrap
+		display: none
+
+
+.about
+	position: relative
+	padding: 100px 0
+	&::before, &::after
+		content: ''
+		display: block
+		width: 100%
+		height: 50px
+		position: absolute
+		left: 0
+		background: #fcd5c5
+		background: -moz-linear-gradient(left, #fcd5c5 10%, #ffffff 10%, #ffffff 90%, #fcd5c5 90%, #fcd5c5 90%)
+		background: -webkit-linear-gradient(left, #fcd5c5 10%,#ffffff 10%,#ffffff 90%,#fcd5c5 90%,#fcd5c5 90%)
+		background: linear-gradient(to right, #fcd5c5 10%,#ffffff 10%,#ffffff 90%,#fcd5c5 90%,#fcd5c5 90%)
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcd5c5', endColorstr='#fcd5c5',GradientType=1 )
+
+	&::before
+		top: 0
+	&::after
+		bottom: 0
+
+	&-heading
+		margin-bottom: 30px
+	&-text
+		font-size: 20px
+		padding: 0 15%
+		color: #2d2220
+		text-align: center
+// ================================================================
+
+
+.prices
+	padding: 50px 0
+	&-heading
+		margin-bottom: 50px
+	&-content
+		background-color: #2e2725
+		color: #fff
+
+
+	&-item
+		position: relative
+		padding: 50px 0
+		border-left: 1px solid #fff
+		border-right: 1px solid #fff
+		text-align: center
+		&-2
+			border: none
+		&-name
+			font-size: 18px
+		&-value
+			font-size: 36px
+			&-accent
+				font-size: 64px
+		&:hover
+			>.prices-item-descr
+				visibility: visible
+
+		&-descr
+			visibility: hidden
+			padding: 25px 15px
+			position: absolute
+			top: 0
+			left: 0
+			transform: translateY(-8%)
+			width: 100%
+			min-height: 120%
+			background-color: #fcd5c5
+			color: #000
+
+			&-title
+				text-transform: uppercase
+				.currency
+					font-size: 12px
+			&-list
+				margin: 20px 0 20px
+				padding-left: 0
+				list-style: none
+				display: flex
+				flex-direction: column
+				justify-content: center
+				flex-wrap: wrap
+				text-align: left
+				
+				li
+					position: relative
+					padding-left: 8px
+					&::before
+						content: ''
+						display: inline-block
+						width: 2px
+						height: 2px
+						border-radius: 50%
+						background-color: #2e2725
+						position: absolute
+						left: 0
+						top: 8px
+						transform: translateY(-50%)
+						z-index: 0
+
+			&-btn
+				background-color: transparent
+				border-color: #2e2725
+				border-width: 1px
+				&:hover
+					color: #fff
+					
+				
+				
+			
+.form-section-host
+	width: 760px
+	margin: 50px auto 30px
+	background-color: #fcdbce
+	position: relative
+	color: #2e2725
+	
+	&::before, &::after 
+		content: ''
+		display: block
+		width: 1000px
+		height: 100%
+		position: absolute
+		top: 0
+		background-color: #fcdbce
+		z-index: 0
+
+	&::before
+		left: -1040px
+	&::after
+		right: -1040px
+
+	&-heading
+		margin: 0
+		position: relative
+		top: -40px
+
+	.form-wrap
+		padding-bottom: 20px
+
+	.contact-us
+		margin-bottom: 10px
+		&-tel
+			color: #2e2725
+			font-weight: bold
+
+
+	.form-name, .form-tel
+		color: #2e2725
+		border-bottom: 1px solid #2e2725
+		&::placeholder
+			color: #2e2725
+		+ span
+			color: #2e2725
+			left: 50%
+			transform: translateX(-50%)
+
+	.form-btn
+		border-color: #2e2725
+		&:hover
+			color: #fff
+			border-color: #80534a
+
+
+
+
+
+
+
+@import "_kate/kate"
+@import "_ivan/ivan"
+@import "_pavel/pavel"
+@import "_evgeniy/evgeniy"
+@import "_dmitriy/dmitriy"

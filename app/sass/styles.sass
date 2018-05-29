@@ -1,0 +1,1077 @@
+@import "fonts"
+@import "fontello"
+@import "libs"
+@import "vars"
+
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+*::-webkit-input-placeholder
+	color: #fcd5c5
+	opacity: 1
+
+*:-moz-placeholder
+	color: #fcd5c5
+	opacity: 1
+
+*::-moz-placeholder
+	color: #fcd5c5
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #fcd5c5
+	opacity: 1
+
+
+html, body
+	overflow-x: hidden
+
+body
+	max-width: 1920px
+	min-width: 320px
+	margin: 0 auto
+	position: relative
+	font: 16px/1.2 $default-font-family
+
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+.nowrap
+	white-space: nowrap
+
+.text-center
+	text-align: center
+
+a
+	text-decoration: none
+
+
+.slick-track
+	display: flex
+	align-items: center
+
+
+@keyframes accent
+	0%
+		box-shadow: 0 0 10px 6px rgba(159, 115, 107, .5)
+	50%
+		box-shadow: 0 0 0px 0px rgba(159, 115, 107, .5)
+	100%
+		box-shadow: 0 0 10px 6px rgba(159, 115, 107, .5)
+// =====================================================	
+
+
+
+
+
+// =========================================================='
+.page-heading
+	min-height: 100vh
+	height: 1px //ie fix
+.page-title
+	max-width: 60%
+	margin: 0 auto
+	font: 4em/1.2 "ForumRegular", sans-serif
+	text-align: center
+	text-transform: uppercase
+	
+.page-subtitle	
+	margin: .9vw 0 1.3vw
+	font: 1.5em "Gogol", sans-serif
+	text-align: center
+	
+.logo-wrap
+	text-align: center
+
+.section-heading 
+	font: 4em/1.2 "ForumRegular", sans-serif
+	color: #2d2220
+	text-transform: uppercase
+	text-align: center
+	
+.social-links
+	margin: 0
+	padding-left: 0
+	list-style-type: none
+	display: flex
+	justify-content: center
+	i
+		cursor: pointer
+		transition: color .1s linear
+		&:hover
+			transition: color .1s linear
+
+figure
+	margin: 0
+
+.grid:after 
+	content: ''
+	display: block
+	clear: both
+
+.slick-slide, .slick-active
+	outline: none
+
+.nowrap
+	white-space: nowrap
+
+.breadcrumbs
+	padding: 30px 0
+	list-style: none
+	border-radius: 4px
+	font-size: 1em
+	>
+		span
+			display: inline-block
+			+ span:before
+				padding: 0 1px
+				content: "/"
+				color: #2d2220
+			a
+				color: #2d2220
+				&:hover
+					color: 
+			&:not(:last-child)
+				text-decoration: underline
+			&:last-child
+				a
+					color: #000
+					text-decoration: none
+					cursor: default
+					&:hover
+						color: #000
+			&:hover
+				text-decoration: none
+
+
+.header-logo, .footer-logo
+	max-width: 125px
+// =====================================================
+
+
+
+// =====================================================
+.main-page-header
+	background-image: url('../img/top-bg.jpg')
+	box-shadow: 0 4px 5px rgba(#bbb5af, .9)
+	min-height: 100vh
+
+.header
+	position: relative
+	background-color: #735c56
+	background-repeat: no-repeat
+	background-position: 50% 0
+	background-size: cover
+	color: #fff
+	
+	&-top-line
+		position: absolute
+		top: 3vw
+		left: 50%
+		transform: translateX(-50%)
+		width: 100%
+		max-width: 1110px
+		font-family: "ForumRegular", sans-serif
+		color: #fff
+		a
+			color: #fff
+	&-phone-wrap
+		text-align: right
+	&-phone
+		color: #ffcaca
+		text-decoration: none
+		cursor: default
+		&:hover
+			text-decoration: underline
+			cursor: default
+
+	&-link-wrap
+		text-align: center
+
+.link
+	display: inline-block
+	min-width: 155px
+	padding: 5px 10px
+	border: 2px solid #fff
+	border-radius: 1px
+	color: currentColor
+	transition: all .1s linear
+	&:hover
+		border-color: #80534a
+		background-color: #80534a
+	&:active
+		transform: translate(1px, 1px)
+// ====================================================
+
+
+
+
+
+// ====================================================
+.catalog
+	padding-bottom: 90px
+
+	&-row
+		display: flex
+		flex-wrap: wrap
+		margin-left: -10px
+		margin-right: -10px
+
+	&-col
+		padding: 0 10px
+		flex: 0 0 20%
+		max-width: 20%
+		min-height: 1px
+		position: relative
+		
+	&-item
+		color: #2d2220
+		&-name
+			margin-top: 20px
+			margin-bottom: 15px
+			font-weight: bold
+
+	&-img
+		height: 315px
+		transition: transform .3s
+
+	&-img-wrap
+		text-align: center
+		position: relative
+		overflow: hidden
+		&:hover
+			.catalog-img-descr
+				&::before
+					transition: opacity .3s
+					opacity: 1
+			.catalog-img-descr-inline
+				transform: translateY(-50%)
+				transition: all .3s
+			.catalog-img
+				transform: scale(1.2)
+				transition: transform 3s
+
+	&-img-descr
+		width: 100%
+		height: 100%
+		position: absolute
+		top: 0
+		left: 0
+		color: #fff
+		&::before
+			content: ''
+			display: block
+			width: 100%
+			height: 100%
+			position: absolute
+			left: 0
+			top: 0
+			opacity: 0
+			z-index: 0
+			background-color: rgba(0,0,0,.4)
+			transition: opacity .3s
+		&-inline
+			width: 100%
+			padding: 0 5px
+			position: absolute
+			left: 0
+			bottom: 0
+			transform: translateY(100%)
+			transition: all .3s
+
+	&-item-text-hidden
+		display: none
+		
+	&-link
+		text-transform: uppercase
+		&-hidden
+			display: none
+			min-width: auto
+			margin-top: 15px
+			padding: 5px 20px
+			border: 2px solid #2d2220
+			transition: all .2s linear
+			&:hover
+				background-color: #fcd5c5
+				transition: all .2s linear
+
+		
+	&-role
+		margin: 5px 0
+		font-size: 14px
+
+	&-social-links
+		a
+			color: #fff
+		i
+			&:hover
+				color: #9f736b
+// ====================================================
+
+
+
+
+
+
+
+
+
+
+// =====================================================
+.embed-container
+	position: relative
+	padding-bottom: 56.25%
+	height: 0
+	overflow: hidden
+	max-width: 100%
+
+.embed-container iframe, .embed-container object, .embed-container embed 
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+
+.video-wrapper
+	width: 100%
+	margin-top: 30px
+	position: relative
+	border-bottom: 1px solid rgba(#2e2725, .5)
+	border-right: 1px solid rgba(#2e2725, .5)
+	overflow: hidden
+
+	.relation-ratio
+		padding-top: 56.25% //пропорция
+		
+	> video
+		width: 100%
+		height: 100%
+		position: absolute
+		top: 0
+		left: 50%
+		transform: translateX(-50%)
+		max-width: 1110px
+		vertical-align: middle
+		background-color: #000
+		&.has-media-controls-hidden::-webkit-media-controls
+			display: none
+
+.video-overlay-play-button
+	box-sizing: border-box
+	width: 100%
+	height: 100%
+	padding: 10px calc(50% - 50px)
+	position: absolute
+	top: 0
+	left: 0
+	display: block
+	opacity: 0.7
+	cursor: pointer
+	transition: opacity 150ms
+	&:hover
+		opacity: 1
+	&.is-hidden
+		display: none
+
+.videoPoster 
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	background-image: url('../img/video-bg.jpg')
+	background-repeat: no-repeat
+	background-size: cover
+	border: none
+	text-indent: -999em
+	overflow: hidden
+	opacity: 1
+	transition: opacity 800ms, height 0s
+	transition-delay: 0s, 0s
+	&:hover 
+		cursor: pointer
+		&:before 
+			border-color: #f00
+			transform: translate(-50%, -50%) scale(1.05)
+
+	&:before 
+		content: ''
+		position: absolute
+		top: 50%
+		left: 50%
+		width: 75px
+		height: 75px
+		transform: translate(-50%, -50%)
+		background: url('../img/play-btn.png') no-repeat
+		background-size: contain
+		transition: transform .2s
+
+.videoWrapperActive .videoPoster 
+	opacity: 0
+	height: 0
+	transition-delay: 0s, 800ms
+
+
+
+.main-page-media
+	position: relative
+	&::before, &::after
+		content: ''
+		width: 22%
+		height: 100%
+		position: absolute
+		display: block
+		z-index: -1
+	&::before
+		top: 250px
+		right: 0
+		max-height: 790px
+		background-color: #80534a
+		background-image: linear-gradient(to top, #fcd5c5 66%, #80534a 33%)
+		
+	&::after
+		max-height: 590px
+		left: 0
+		bottom: 148px 
+		background-color: #fcd5c5
+		background-image: linear-gradient(to top, #fcd5c5 55%, #80534a 45%)
+
+.main-page-media-heading, .host-page-media-heading
+	color: #fff
+
+.media
+	padding-bottom: 90px
+	background-color: #2e2725
+	z-index: 1
+
+	&-photos
+		margin-top: 20px
+
+.grid
+	left: 1px
+.grid-item
+	width: 359px
+	margin-bottom: 18px
+	float: left
+	overflow: hidden
+	position: relative
+	&:hover
+		.grid-item-text
+			&::before
+				transition: all .2s linear
+				opacity: 1
+				transform: translate3d(0,0,0)
+		.grid-item-info-date
+			transition: all .2s linear
+			transform: translateY(0)
+	&-text
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		&::before
+			content: ''
+			display: block
+			width: 100%
+			height: 100%
+			position: absolute
+			left: 0
+			top: 0
+			z-index: 0
+			opacity: 0
+			transition: all .2s linear
+			background: linear-gradient(to bottom, rgba(15,15,15,0) 0%, rgba(23, 14, 9, .4) 75%)
+			transform: translate3d(0,50%,0)
+
+	&-info-date
+		width: 100%
+		padding: 10px
+		position: absolute
+		left: 0
+		bottom: 20px
+		text-align: center
+		color: #fff
+		transform: translateY(150%)
+		transition: all .2s linear
+
+
+.grid-item--width2
+	width: 233px
+.grid-item--height2 
+	height: 447px
+.grid-item--height3
+	height: 237px
+.grid-item--height4 
+	height: 192px
+// ===========================================================
+
+@keyframes translatingImgRight
+	0%
+		right: 17%
+	100%
+		right: 0
+@keyframes translatingImgLeft
+	0%
+		left: 17%
+	100%
+		left: 0
+		
+.separator
+	height: 1px
+	background-image: linear-gradient(90deg, #3b2e2b 0, #3b2e2b 10px, transparent 10px, transparent 14px, #3b2e2b 14px, #3b2e2b 37px, transparent 37px, transparent 50px, #3b2e2b 50px, #3b2e2b 90px, transparent 90px, transparent 92px, #3b2e2b 92px, #3b2e2b 122px, transparent 122px, transparent 130px, #3b2e2b 130px, #3b2e2b 150px)
+
+// ===================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// =====================================================
+.advantages
+	&-item
+		padding: 5vw 0
+		z-index: 1
+	&-item1, &-item3
+		background-image: linear-gradient(90deg, #fcd5c5 50%, #fff 50%)
+
+	&-item2
+		background-image: linear-gradient(-90deg, #fcd5c5 50%, #fff 50%)
+
+	&-number
+		margin-bottom: 12px
+		font-size: 64px
+		color: #21252b
+
+	&-separator
+		width: 140px
+		
+	&-item-inner
+		padding-left: 24%
+		padding-right: 6%
+		
+
+	&-heading, &-text
+		color: #2d2220
+	&-heading
+		margin-top: 12px
+		text-transform: uppercase
+		font-weight: bold
+	&-text
+		margin-top: 18px
+		
+	&-img-wrap
+		display: flex
+		justify-content: center
+		align-items: center
+		position: relative
+		right: 17%
+	&-img
+		z-index: 1
+
+	&-item2
+		.advantages-img-wrap
+			left: 17%
+
+.advantages-text-hidden
+	display: none
+	margin-top: 20px
+	.advantages-text
+		margin-top: 5px
+	
+
+
+		
+.positionResetRight
+	animation: translatingImgRight 1.25s .1s forwards
+.positionResetLeft
+	animation: translatingImgLeft 1.25s .1s forwards
+// ====================================================
+
+
+
+
+
+
+
+
+// =====================================================
+.feedbacks
+	padding-bottom: 90px
+
+	&-slider-inner
+		background-color: #fff
+		width: 465px
+		z-index: 1
+		margin-right: -20px
+		border: 25px solid #fff
+		border-right-width: 0
+		border-left-width: 0
+
+	&-slide
+		display: flex!important
+		justify-content: center
+		align-items: center
+		padding: 0 100px
+		a
+			color: inherit
+			text-decoration: underline
+			&:hover
+				text-decoration: none
+			&:focus
+				outline: none
+				box-shadow: 0 0 0 1px rgba(#9f736b, .4)
+				
+
+	.slide
+		&-img-wrap
+			height: 315px
+			display: flex
+			align-items: center
+			justify-content: flex-end
+			position: relative
+			overflow: hidden
+
+		&-content
+			max-width: 450px
+			min-height: 405px
+			// height: 1px
+			display: flex
+			flex-direction: column
+			justify-content: center
+			padding: 50px
+			border: 1px solid #2d2220
+
+		&-separator
+			width: 90px
+
+		&-names
+			font: 1.875em/1.2 "Gogol", sans-serif
+			margin-top: 10px
+		&-text
+			margin-top: 10px
+
+.slick-prev, .slick-next
+	position: absolute
+	width: 20px
+	height: 20px
+	top: 50%
+	transform: translateY(-50%)
+	background: url('../img/slider-arrows.png') no-repeat 0 0
+	color: transparent
+	border: none
+	outline: none
+	cursor: pointer
+	z-index: 1
+	&:active
+		top: 51%
+
+
+.slick-prev
+	left: 7%
+.slick-next
+	right: 7%
+	background-position: 100% 0
+
+// =================================================
+
+
+
+
+
+
+
+
+
+
+
+// =====================================================
+.main-page-form-section
+	background-color: #9f736b
+	padding-bottom: 90px
+	color: #fff
+	.contact-us
+		margin-bottom: 25px
+		&-tel
+			color: #fcd5c5
+.form-section
+	&-heading
+		margin-bottom: .5em
+		color: #fff
+
+	.contact-us
+		&-tel
+			cursor: default
+			&:hover
+				text-decoration: underline
+				
+
+	&-social
+		margin-top: 30px
+		text-align: center
+		&-links
+			margin-top: 20px
+			a
+				color: #fff
+			i
+				font-size: 18px
+				&::before
+					margin: 0 10px
+				&:hover
+					color: #2e2725
+		
+.main-page-form-section
+	.form-name, .form-tel
+		color: #fcd5c5
+		border-bottom: 1px solid #fff
+		+ span
+			color: #fcd5c5
+			left: 50%
+			transform: translateX(-50%)
+	.form-name
+		margin-bottom: 15px
+.form-wrap
+	max-width: 415px
+	margin: 0 auto
+	padding: 0	20px
+	text-align: center
+.form-name, .form-tel
+	display: block
+	width: 100%
+	margin-top: 10px
+	padding: 10px
+	font-size: 14px
+	background-color: transparent
+	border: none
+	outline: none
+	text-align: center
+	color: #fcd5c5
+	transition: all 0.2s ease-in-out
+	&::placeholder
+		color: #fcd5c5
+		transition: all 0.2s ease-in-out
+	&:focus, &.populated
+		&::placeholder
+			color: transparent!important
+		& + span
+			opacity: 1
+			top: 0
+	+ span
+		font-size: 14px
+		position: absolute
+		top: 0px
+		opacity: 0
+		transition: all 0.2s ease-in-out
+.form-name
+	margin-bottom: 15px
+
+
+
+.form-btn
+	display: inline-block
+	margin-top: 25px
+	background-color: transparent
+	cursor: pointer
+	border-width: 1px
+	
+
+
+
+.cd-checkbox 
+	margin-top: 20px
+	display: flex
+	justify-content: center
+	cursor: pointer
+	vertical-align: top
+	font-size: 0
+
+	.cd-hidden 
+		display: none
+
+	.cd-checkbox__pseudo-wr 
+		display: inline-block
+		vertical-align: middle
+		width: 26px
+		height: 26px
+		box-sizing: border-box
+		padding: 3px
+		-webkit-box-flex: 0
+		-ms-flex: 0 0 26px
+		flex: 0 0 26px
+
+	.cd-checkbox__pseudo 
+		display: block
+		width: 100%
+		height: 100%
+		border: 2px solid #c2c2c2
+		box-sizing: border-box
+		background-color: #fff
+		position: relative
+		-webkit-transition: background .2s ease-out,border .2s ease-out
+		transition: background .2s ease-out,border .2s ease-out
+
+	.cd-checkbox__check 
+		position: absolute
+		top: 1px
+		left: 1px
+		stroke: #fff
+		stroke-dasharray: 19px
+		stroke-dashoffset: 19px
+		-webkit-transition: .2s ease-out
+		transition: .2s ease-out
+
+	.cd-checkbox__text 
+		display: inline-block
+		vertical-align: middle
+		font-family: FiraSans,sans-serif
+		font-size: 12px
+		font-weight: 500
+		line-height: 24px
+		margin-left: 8px
+		text-align: left
+		text-decoration: none
+		
+		a 
+			color: inherit
+			text-decoration: underline
+			&:hover
+				text-decoration: none
+				
+
+.cd-checkbox 
+	input[type=checkbox]
+		&:checked
+			+ .cd-checkbox__pseudo-wr 
+				.cd-checkbox__pseudo 
+					.cd-checkbox__check 
+						stroke-dashoffset: 38px
+
+
+// ==========================================================
+
+
+// =====================================================
+.footer
+	min-height: 200px
+	padding: 50px 0 25px
+	color: #9f736b
+	background-color: #2e2725
+
+	&-nav-list
+		margin: 0
+		padding-left: 0
+		list-style-type: none
+		li
+			margin-bottom: 10px
+			position: relative
+			transition: all .2s linear
+			a
+				display: block
+				color: inherit
+			i
+				position: absolute
+				top: 0
+				left: 0
+				opacity: 0
+				transition: all .1s linear
+				
+			&:hover
+				color: #fcd5c5
+				padding-left: 25px
+				transition: all .2s linear
+				i
+					height: auto
+					opacity: 1
+					transition: all .2s linear .1s
+
+	&-contacts, &-copy
+		position: relative
+		&::before
+			content: ''
+			display: block
+			width: 1px
+			height: 45px
+			position: absolute
+			left: -35px
+			top: 3px
+			background-image: linear-gradient(#9f736b, #9f736b 12px, transparent 12px, transparent 18px, #9f736b 18px, #9f736b 45px)
+
+	&-tel-wrap
+		margin-bottom: 20px
+	&-tel
+		cursor: default
+		color: inherit
+		transition: all .2s linear
+		&:hover
+			text-decoration: underline
+			color: #fcd5c5
+			transition: all .2s linear
+
+			
+
+	&-social-links
+		justify-content: flex-start
+		a
+			display: block
+			height: 30px
+			width: 30px
+			display: flex
+			justify-content: center
+			align-items: center
+			background-color: #9f736b
+			border-radius: 50%
+			margin-left: 13px
+			color: #2e2725
+			&:hover
+				i
+					color: #fff
+					transition: all .1s linear
+		i
+			transition: all .1s linear
+			&::before
+				margin: 0
+				line-height: 1.2
+
+
+	&-copy
+		&-block
+			margin-bottom: 20px
+
+
+	&-withLove
+		margin-top: 20px
+		padding-top: 20px
+		font: 28px "Gogol", sans-serif
+		text-align: center
+		border-top: 1px solid #9f736b
+// ======================================================
+
+@import "host"
+@import "services"
+
+// ======================================================
+
+
+.cd-popup
+	position: fixed
+	left: 0
+	top: 0
+	height: 100%
+	width: 100%
+	overflow-y: scroll
+	padding-bottom: 250px
+	background-color: rgba(#fcd5c5, .5)
+	opacity: 0
+	visibility: hidden
+	display: none
+	z-index: 100
+	
+	transition: opacity 0.3s 0s, visibility 0s 0.3s
+	&.is-visible
+		opacity: 1
+		visibility: visible
+		display: block
+		
+		transition: opacity 0.3s 0s, visibility 0s 0s
+
+.cd-popup-container
+	position: fixed
+	top: 50%
+	left: 50%
+	max-width: 500px
+	width: 100%
+	margin: 0 auto
+	padding: 50px
+	background: #fff
+	border-radius: .25em .25em .4em .4em
+	text-align: center
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.2)
+	transform: translate(-50%,-50%)
+	-webkit-backface-visibility: hidden
+	-webkit-transition-property: -webkit-transform
+	transition-property: transform
+	transition-duration: 0.3s
+
+.cd-popup-container .cd-popup-close
+	position: absolute
+	top: 8px
+	right: 8px
+	width: 30px
+	height: 30px
+	&::before, &::after
+		content: ''
+		position: absolute
+		top: 12px
+		width: 14px
+		height: 3px
+		background-color: black
+	&::before
+		transform: rotate(45deg)
+		left: 8px
+	&::after
+		transform: rotate(-45deg)
+		right: 8px
+
+.is-visible .cd-popup-container
+	// transform: translateY(0)
+
+.img-replace
+	display: inline-block
+	overflow: hidden
+	text-indent: 100%
+	color: transparent
+	white-space: nowrap
+
+.modal-form-heading
+	font-size: 45px
+	color: #9f736b
+
+.modal-form
+	margin-top: 20px
+	input:not([type="submit"])
+		color: #21252b
+		border-bottom: 1px solid #21252b
+		text-align: left
+		padding-left: 0
+		&::placeholder
+			color: #21252b
+		&:focus, &.populated
+			& + span
+				opacity: 1
+				top: 0
+		+ span
+			color: #21252b
+			left: 15px
+
+
+	.cd-checkbox
+		margin-top: 30px
+
+
+	.form-btn
+		border: 1px solid #21252b
+		&:hover
+			color: #fff
+			border-color: #80534a
+			transition: all .1s linear
+
+@import "media"

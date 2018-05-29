@@ -1,0 +1,44 @@
+.kate-page-header
+	background-image: url('../img/kate/kate.jpg')
+	background-position: 100% -20px
+	position: relative
+	&::before
+		content: ''
+		display: block
+		width: 100%
+		height: 100%
+		position: absolute
+		left: 0
+		top: 0
+		background: linear-gradient(180deg, rgba(0,0,0,.35) -20%, transparent 30%)
+		z-index: 0
+	.page-heading
+		margin-left: -50px
+	.page-title
+		margin-left: 0
+	.header-link-wrap
+		max-width: 60%
+
+@media only screen and (max-width :1199px)		
+	.kate-page-header
+		background-position: 100% 0
+		.page-heading
+			margin-left: 0
+		.page-title
+			margin-left: auto
+		.header-link-wrap
+			min-width: 100%
+
+@media only screen and (max-width :991px)		
+	.kate-page-header
+		background-position: 84% 0
+
+@media only screen and (max-width :575px)		
+	.kate-page-header
+		background-position: 60% 0 !important
+
+.form-section-kate
+	margin: 80px auto 60px
+
+	.form-section-host-heading
+		font-size: 60px
