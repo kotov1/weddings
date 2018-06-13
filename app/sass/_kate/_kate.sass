@@ -18,10 +18,22 @@
 	.page-title
 		margin-left: 0
 		color: #27160e
+	.page-title, .header-link
+		color: #000
+		text-shadow: 0 0 10px #fcdbce
+	.header-link
+		border-color: #fcdbce
+		background-color: #fcdbce
+		&:hover
+			border-color: #80534a
+			background-color: #80534a
 	.header-link-wrap
 		max-width: 60%
-
-@media only screen and (max-width :1199px)		
+@media only screen and (min-width :1600px)
+	.kate-page-header
+		.page-heading
+			padding: 30vw 0 0 0	
+@media only screen and (max-width :1199px)
 	.kate-page-header
 		background-position: 100% 0
 		.page-heading
@@ -33,6 +45,8 @@
 			color: #fff
 		.header-link-wrap
 			min-width: 100%
+		br
+			display: none
 
 @media only screen and (max-width :991px)		
 	.kate-page-header
