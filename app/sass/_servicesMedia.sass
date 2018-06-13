@@ -1,19 +1,5 @@
 @import "vars"
 
-
-@media only screen and (max-width : 1199px)
-
-	.services-item
-		height: 300px
-
-	// .services-page-media
-	// 	img[src*="portfolio2"], img[src*="portfolio3"]
-	// 		max-width: 125%
-
-	/**/
-
-
-
 @media only screen and (max-width : 991px)
 
 	.services-page-header 
@@ -21,9 +7,15 @@
 			margin-bottom: 25px
 
 	.services-item
-		height: 400px
+
 	.services-img
 		width: auto
+
+	.services-page-services
+		.slick-prev
+			background-position: 0 100%
+		.slick-next
+			background-position: 100% 100%
 
 
 
@@ -42,6 +34,12 @@
 	.services-responsive-slide
 		padding: 0 17vw
 
+	.services-page-services
+		.slick-prev
+			background-position: 0 0
+		.slick-next
+			background-position: 100% 0
+
 
 
 	/**/
@@ -56,7 +54,7 @@
 			right: 0
 
 	.services-responsive-slide
-		padding: 0
+		// padding: 0
 
 	// .services-page-media
 	// 	img[src*="portfolio2"], img[src*="portfolio3"]
@@ -69,7 +67,7 @@
 
 @media only screen and (max-width : 480px)
 	.services-page-services
-		padding-bottom: 165px
+		padding-bottom: 50px
 		.container
 			padding: 0
 
@@ -79,8 +77,8 @@
 
 	.services-item
 		margin: 30px auto 0
-		width: 320px
-		height: 300px	
+		max-width: 320px
+		// height: 300px		
 	.services-img
 		// height: 100%
 		min-width: 320px

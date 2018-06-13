@@ -1,18 +1,18 @@
 $(function() {
 
 	// Video at main page
-	$(document).on('click','.js-videoPoster',function(e) {
-		e.preventDefault();
-		var poster = $(this);
-		var wrapper = poster.closest('.js-videoWrapper');
-		videoPlay(wrapper);
-	});
-	function videoPlay(wrapper) {
-		var iframe = wrapper.find('.js-videoIframe');
-		var src = iframe.data('src');
-		wrapper.addClass('videoWrapperActive');
-		iframe.attr('src',src);
-	}
+	// $(document).on('click','.js-videoPoster',function(e) {
+	// 	e.preventDefault();
+	// 	var poster = $(this);
+	// 	var wrapper = poster.closest('.js-videoWrapper');
+	// 	videoPlay(wrapper);
+	// });
+	// function videoPlay(wrapper) {
+	// 	var iframe = wrapper.find('.js-videoIframe');
+	// 	var src = iframe.data('src');
+	// 	wrapper.addClass('videoWrapperActive');
+	// 	iframe.attr('src',src);
+	// }
 
 
 	// Masonry
@@ -61,15 +61,7 @@ $(function() {
 		slidesToScroll: 1,
 		arrows: true,
 		autoplay: true,
-		autoplaySpeed: 5000,
-		responsive: [
-		{
-			breakpoint: 767,
-			settings: {
-				adaptiveHeight: true
-			}
-		}
-	]
+		autoplaySpeed: 5000
 	});
 
 
@@ -82,6 +74,13 @@ $(function() {
 		responsive: [
 		{
 			breakpoint: 997,
+			settings: {
+				slidesToShow: 2,
+				arrows: true
+			}
+		},
+		{
+			breakpoint: 768,
 			settings: {
 				slidesToShow: 1,
 				arrows: true
@@ -103,12 +102,12 @@ $(function() {
 		$('body,html').animate({scrollTop: top}, 1000);
 	});
 
-	$(".js-scroll-down").on("click", function (event) {
-		event.preventDefault();
-		var id  = $(this).attr('href'),
-			top = $(id).offset().top;
-		$('body,html').animate({scrollTop: top}, 1000);
-	});
+	// $(".js-scroll-down").on("click", function (event) {
+	// 	event.preventDefault();
+	// 	var id  = $(this).attr('href'),
+	// 		top = $(id).offset().top;
+	// 	$('body,html').animate({scrollTop: top}, 1000);
+	// });
 
 
 
@@ -162,5 +161,7 @@ $(function() {
 		});
 		return false;
 	});	
+
+
 
 });

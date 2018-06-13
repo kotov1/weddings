@@ -162,6 +162,7 @@ figure
 // =====================================================
 .main-page-header
 	background-image: url('../img/top-bg.jpg')
+	background-position: 50% 50% !important
 	box-shadow: 0 4px 5px rgba(#bbb5af, .9)
 	min-height: 100vh
 
@@ -219,6 +220,9 @@ figure
 // ====================================================
 .catalog
 	padding-bottom: 90px
+	color: #2d2220
+	a
+		color: inherit
 
 	&-row
 		display: flex
@@ -234,11 +238,15 @@ figure
 		position: relative
 		
 	&-item
-		color: #2d2220
 		&-name
 			margin-top: 20px
 			margin-bottom: 15px
 			font-weight: bold
+		&-name, &-text
+			a
+				cursor: default
+				&:hover
+					cursor: default
 
 	&-img
 		height: 315px
@@ -247,6 +255,7 @@ figure
 	&-img-wrap
 		text-align: center
 		position: relative
+		z-index: 2
 		overflow: hidden
 		&:hover
 			.catalog-img-descr
@@ -254,38 +263,40 @@ figure
 					transition: opacity .3s
 					opacity: 1
 			.catalog-img-descr-inline
-				transform: translateY(-50%)
+				bottom: 30px
 				transition: all .3s
 			.catalog-img
 				transform: scale(1.2)
 				transition: transform 3s
 
 	&-img-descr
+		display: block
 		width: 100%
-		height: 100%
+		height: 80px
 		position: absolute
-		top: 0
+		bottom: 0
 		left: 0
 		color: #fff
-		&::before
-			content: ''
-			display: block
-			width: 100%
-			height: 100%
-			position: absolute
-			left: 0
-			top: 0
-			opacity: 0
-			z-index: 0
-			background-color: rgba(0,0,0,.4)
-			transition: opacity .3s
+		z-index: 0
+		text-decoration: none
+		// &::before
+		// 	content: ''
+		// 	display: block
+		// 	width: 100%
+		// 	height: 100%
+		// 	position: absolute
+		// 	left: 0
+		// 	top: 0
+		// 	opacity: 0
+		// 	z-index: 0
+		// 	background-color: rgba(0,0,0,.4)
+		// 	transition: opacity .3s
 		&-inline
 			width: 100%
 			padding: 0 5px
 			position: absolute
 			left: 0
-			bottom: 0
-			transform: translateY(100%)
+			bottom: -200px
 			transition: all .3s
 
 	&-item-text-hidden
@@ -293,16 +304,23 @@ figure
 		
 	&-link
 		text-transform: uppercase
-		&-hidden
-			display: none
-			min-width: auto
-			margin-top: 15px
-			padding: 5px 20px
-			border: 2px solid #2d2220
-			transition: all .2s linear
-			&:hover
-				background-color: #fcd5c5
-				transition: all .2s linear
+		display: inline-block
+		min-width: 155px
+		padding: 5px 10px
+		border: 2px solid #fff
+		border-radius: 1px
+		color: currentColor
+		transition: all .1s linear
+		// &-hidden
+		// 	display: none
+		// 	min-width: auto
+		// 	margin-top: 15px
+		// 	padding: 5px 20px
+		// 	border: 2px solid #2d2220
+		// 	transition: all .2s linear
+		// 	&:hover
+		// 		background-color: #fcd5c5
+		// 		transition: all .2s linear
 
 		
 	&-role
@@ -315,6 +333,9 @@ figure
 		i
 			&:hover
 				color: #9f736b
+
+.hidden-social-links
+	display: none
 // ====================================================
 
 
@@ -346,14 +367,14 @@ figure
 	margin-top: 30px
 	position: relative
 	border-bottom: 1px solid rgba(#2e2725, .5)
-	border-right: 1px solid rgba(#2e2725, .5)
+	// border-right: 1px solid rgba(#2e2725, .5)
 	overflow: hidden
 
 	.relation-ratio
 		padding-top: 56.25% //пропорция
 		
 	> video
-		width: 100%
+		width: 101%
 		height: 100%
 		position: absolute
 		top: 0
@@ -454,7 +475,7 @@ figure
 	z-index: 1
 
 	&-photos
-		margin-top: 20px
+		margin-top: 30px
 
 .grid
 	left: 1px
@@ -578,6 +599,8 @@ figure
 		font-weight: bold
 	&-text
 		margin-top: 18px
+		font-size: 18px
+		padding-right: 40px
 		
 	&-img-wrap
 		display: flex
@@ -654,7 +677,6 @@ figure
 		&-content
 			max-width: 450px
 			min-height: 405px
-			// height: 1px
 			display: flex
 			flex-direction: column
 			justify-content: center
@@ -939,7 +961,7 @@ figure
 			align-items: center
 			background-color: #9f736b
 			border-radius: 50%
-			margin-left: 13px
+			margin-right: 13px
 			color: #2e2725
 			&:hover
 				i
@@ -1073,5 +1095,27 @@ figure
 			color: #fff
 			border-color: #80534a
 			transition: all .1s linear
+
+
+
+.agreement
+	padding: 50px 0
+	ul
+		list-style: none
+		
+.agreement-page-header
+	height: auto
+	padding: 30px 0
+	background-color: #2e2725
+	.header-top-line
+		position: static
+		transform: none
+	
+
+
+
+
+
+
 
 @import "media"

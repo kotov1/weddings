@@ -1,8 +1,25 @@
 .evgeniy-page-header
 	background-image: url('../img/evgeniy/evgeniy.jpg')
+	background-position-x: calc(50% + 100px)!important
+	background-size: calc(100% + 200px) auto
+	.page-title, .header-link
+		color: #000
+		text-shadow: 0 0 10px #fcdbce
+	.header-link
+		border-color: #fcdbce
+		background-color: #fcdbce
+		&:hover
+			border-color: #80534a
+			background-color: #80534a
+
+@media only screen and (max-width : 1199px)
+	.evgeniy-page-header
+		background-size: cover
+	/**/
 
 @media only screen and (max-width : 767px)
 	.evgeniy-page-header
+		background-size: calc(100% + 200px) auto
 		position: relative
 		&::before
 			content: ''
@@ -14,4 +31,9 @@
 			top: 0
 			background: linear-gradient(0deg, rgba(0,0,0,.35), transparent 50%)
 			z-index: 0
+	/**/
+
+@media only screen and (max-width : 594px)
+	.evgeniy-page-header
+			background-size: cover
 	/**/
